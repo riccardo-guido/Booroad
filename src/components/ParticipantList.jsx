@@ -5,9 +5,9 @@ export default function ParticipantList({ participants }) {
     <div className="container">
       <div className="row">
         <h1>Card Partecipants</h1>
-        {participants.map((participant) => {
+        {participants.map((participant, index) => {
           return (
-            <div key={participant.id} className="col-4">
+            <div key={index} className="col-4">
               <ParticipantCard
                 idParticipant={participant.id}
                 firstName={participant.firstName}

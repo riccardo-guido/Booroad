@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import InsertNewParticipant from "../components/InsertNewParticipant";
 import trips from "../../data/array";
 import ParticipantList from "../components/ParticipantList";
 
 export default function DetailPage() {
-  const initialValue = "";
+  // const initialValue = "";
 
   const { id } = useParams();
   const tripId = parseInt(id);
@@ -17,7 +17,6 @@ export default function DetailPage() {
   console.log(participantsTrip);
 
   useEffect(() => {
-    // Se il campo è vuoto, mostra tutti
     if (filterText.trim() === "") {
       setParticipantsTrip(participants);
     } else {
@@ -59,6 +58,10 @@ export default function DetailPage() {
         </div>
 
         <ParticipantList participants={participantsTrip} />
+        <InsertNewParticipant
+          participants={participantsTrip}
+          setParticipants={setParticipantsTrip}
+        />
       </section>
     </>
   );

@@ -32,7 +32,6 @@ export default function InsertNewTrip({ setTrips, trips }) {
       participants: [],
     });
   };
-  console.log(trips);
 
   return (
     <form onSubmit={handleSubmit}>
